@@ -71,6 +71,16 @@ export const Video = styled.div`
 	flex-wrap: wrap;
 	margin-top: 10px;
 `
+export const Title = styled.div`
+	display: none;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	right: 0;
+	left: 0;
+	margin: auto;
+	color: #eee9e4;
+`
 export const VideoItem = styled.div`
 	position: relative;
 	&:hover ${Title} {
@@ -84,15 +94,4 @@ export const Icon = styled.div`
 	bottom: 10px;
 	right: 10px;
 	z-index: 999;
-`
-
-export const Title = styled.div`
-	display: none;
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	right: 0;
-	left: 0;
-	margin: auto;
-	color: #eee9e4;
 `
