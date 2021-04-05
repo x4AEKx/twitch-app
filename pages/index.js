@@ -1,27 +1,21 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Link from "next/link"
+import styled from "styled-components"
 
 import { setFavoriteVideo, setVideosThunk } from "../redux/appReducer"
 import { getFavoritesVideos, getVideos } from "../redux/appSelectors"
-import { Header, Video, Icon, Star, Input, Wrapper, HeaderFlex } from "./../styles/styles"
-
-export const Title = styled.div`
-	display: none;
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	right: 0;
-	left: 0;
-	margin: auto;
-	color: #eee9e4;
-`
-export const VideoItem = styled.div`
-	position: relative;
-	&:hover ${Title} {
-		display: block;
-	}
-`
+import {
+	Header,
+	Video,
+	Icon,
+	Star,
+	Input,
+	Wrapper,
+	HeaderFlex,
+	Title,
+	VideoItem,
+} from "./../styles/styles"
 
 export default function App() {
 	const videos = useSelector(getVideos)
