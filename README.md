@@ -15,7 +15,7 @@ https://twitch-app-x4aekx.vercel.app/
 
 ---
 
-![Twitch-app image](https://github.com/x4aekx/twitch-app/raw/main/src/public/twitch-app.gif)
+![Twitch-app image](https://github.com/x4aekx/twitch-app/raw/main/public/twitch-app.gif)
 
 ---
 
