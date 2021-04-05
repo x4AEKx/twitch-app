@@ -1,34 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Search videos from channel on Twitch
 
-## Getting Started
+NextJs application, that allows you to search for a video of a channel on twitch by the name of this channel:
 
-First, run the development server:
+- created a service that allows you to search for a video of a channel on twitch by the name of this channel
+- the user can add videos to favorites and in the favorites tab the videos that he added will be displayed, he can also remove them from the favorites
+- when you reload the page, videos added to favorites should not disappear from there
+- clicking on the preview opens this video in the browser
+- when you hover over a video, the title of the video is shown
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Demonstration:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+you can see the project:
+https://twitch-app-x4aekx.vercel.app/
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+![Twitch-app image](https://github.com/x4aekx/twitch-app/raw/main/src/public/twitch-app.gif)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-## Learn More
+## Run project:
 
-To learn more about Next.js, take a look at the following resources:
+for run project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone repository
+   `git clone https://github.com/x4AEKx/twitch-app.git your-folder`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Type
+   `npm install && npm run dev`
 
-## Deploy on Vercel
+## Used technologies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- NextJs
+- styled components
+- React
+- Redux
+- Redux-thunk
+- third party api: Twitch.api
