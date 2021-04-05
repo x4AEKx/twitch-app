@@ -4,17 +4,24 @@ import Link from "next/link"
 
 import { setFavoriteVideo, setVideosThunk } from "../redux/appReducer"
 import { getFavoritesVideos, getVideos } from "../redux/appSelectors"
-import {
-	Header,
-	Video,
-	Icon,
-	Star,
-	Title,
-	VideoItem,
-	Input,
-	Wrapper,
-	HeaderFlex,
-} from "./../styles/styles"
+import { Header, Video, Icon, Star, Input, Wrapper, HeaderFlex } from "./../styles/styles"
+
+export const Title = styled.div`
+	display: none;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	right: 0;
+	left: 0;
+	margin: auto;
+	color: #eee9e4;
+`
+export const VideoItem = styled.div`
+	position: relative;
+	&:hover ${Title} {
+		display: block;
+	}
+`
 
 export default function App() {
 	const videos = useSelector(getVideos)

@@ -71,22 +71,22 @@ export const Video = styled.div`
 	flex-wrap: wrap;
 	margin-top: 10px;
 `
-export const Title = styled.div`
-	display: none;
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	right: 0;
-	left: 0;
-	margin: auto;
-	color: #eee9e4;
-`
-export const VideoItem = styled.div`
-	position: relative;
-	&:hover ${Title} {
-		display: block;
-	}
-`
+// export const Title = styled.div`
+// 	display: none;
+// 	position: absolute;
+// 	text-align: center;
+// 	top: 50%;
+// 	right: 0;
+// 	left: 0;
+// 	margin: auto;
+// 	color: #eee9e4;
+// `
+// export const VideoItem = styled.div`
+// 	position: relative;
+// 	&:hover ${Title} {
+// 		display: block;
+// 	}
+// `
 
 export const Icon = styled.div`
 	cursor: pointer;
