@@ -1,65 +1,79 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import Link from "next/link"
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+import { setFavoriteVideo, setVideosThunk } from "../redux/appReducer"
+import { getFavoritesVideos, getVideos } from "../redux/appSelectors"
+import {
+	Header,
+	Video,
+	Icon,
+	Star,
+	VideoItem,
+	Title,
+	Input,
+	Wrapper,
+	HeaderFlex,
+} from "./../styles/styles"
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+export default function App() {
+	const videos = useSelector(getVideos)
+	const favorites = useSelector(getFavoritesVideos)
+	const dispatch = useDispatch()
+	const [value, setValue] = useState("")
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+	const handleClick = (event) => {
+		event.preventDefault()
+		dispatch(setVideosThunk(value))
+	}
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+	return (
+		<>
+			<header>
+				<Header>
+					<Wrapper>
+						<HeaderFlex>
+							<div>
+								<label htmlFor="search">Введите название канала</label>
+								<Input
+									value={value}
+									onChange={(e) => setValue(e.target.value)}
+									name="search"
+									type="text"
+								/>
+								<button onClick={handleClick}>Найти</button>
+							</div>
+							<Link href="/favorites">
+								<a>
+									Favorites <Star fill="#F7D372" />
+								</a>
+							</Link>
+						</HeaderFlex>
+					</Wrapper>
+				</Header>
+			</header>
+			<main>
+				<Wrapper>
+					<Video>
+						{videos &&
+							videos.map((video) => {
+								return (
+									<VideoItem key={video._id}>
+										<Title>{video.title}</Title>
+										<Link href={video.url}>
+											<img src={video.preview.medium} alt={video.title} />
+										</Link>
+										<Icon onClick={() => dispatch(setFavoriteVideo(video))}>
+											<Star
+												fill={favorites.some((item) => item._id === video._id) ? "yellow" : "none"}
+											/>
+										</Icon>
+									</VideoItem>
+								)
+							})}
+					</Video>
+				</Wrapper>
+			</main>
+		</>
+	)
 }
