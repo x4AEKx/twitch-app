@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
 import Link from "next/link"
-import styled from "styled-components"
 
 import { removeFavoriteVideo } from "../redux/appReducer"
 import { getFavoritesVideos } from "../redux/appSelectors"

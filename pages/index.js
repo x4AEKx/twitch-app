@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Link from "next/link"
-import styled from "styled-components"
 
 import { setFavoriteVideo, setVideosThunk } from "../redux/appReducer"
 import { getFavoritesVideos, getVideos } from "../redux/appSelectors"
