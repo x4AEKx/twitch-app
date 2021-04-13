@@ -27,8 +27,11 @@ for run project
    `git clone https://github.com/x4AEKx/twitch-app.git your-folder`
 
 1. Create `.env.local` file in root (`/`) directory and edit it:
-   `TOKEN=your_token_from_twitchAPI`
-   `CLIENT_ID=your_clientId_from_twitchAPI`
+
+   ```
+   TOKEN=your_token_from_twitchAPI
+   CLIENT_ID=your_clientId_from_twitchAPI
+   ```
 
 1. Type
    `npm install && npm run dev`
